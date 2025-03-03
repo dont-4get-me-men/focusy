@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="global.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Settings for focusy</title>
+  </head>
+  <body class="settings-body">
+    <a href="popup.html" class="back-link">Back</a>
+    <div class="header-settings">
+      <h2>Settings</h2>
+    </div>
+    <div class="settings-container">
+      <div class="settings-links-input" id="blacklist-div">
+        <h3>Blacklist</h3>
+        <textarea
+          id="blacklist-input"
+          placeholder="e.g. facebook.com, youtube.com"
+        ></textarea>
+      <div class="settings-links-input" id="whitelist-div">
+        <h3>Whitelist</h3>
+       <textarea
+          id="whitelist-input"
+          placeholder="e.g. facebook.com, youtube.com"
+        ></textarea>
+      </div>
+    </div>
+    <div class="redirect-url-block">
+      <h3>Redirect mode</h3>
+      <div class = "checkbox-container">
+        <input id="enable-redirection" type="checkbox"/>
+        <label for = "enable-redirection">Enable redirection</label>
+      </div>
+    </div>
+    <button id="blacklist-save" class="save-button">Save</button>
+  </body>
+</html>
