@@ -135,15 +135,24 @@
   }
   
  /* settings.html */ 
-  h3{
+  .redirect-url-block h3{
     margin: 0;
     color: var(--primary-color); 
     font-weight: 600;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
   }
+  
+  .redirect-url-block h4{
+    margin: 0;
+    color: var(--primary-color); 
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+  
   textarea{
     width: 95%;
     max-width: 95%;
+    min-width:95%;
     padding: 10px;
     border: 1px solid var(--border-color); 
     border-radius: var(--border-radius);
@@ -170,4 +179,15 @@
     align-items: center;
     gap: 10px;
     margin-bottom: 20px;
+    margin-right: 10px;
   }
+
+  
+  input[type="text"]{
+    width: 95%;
+    padding: 10px;
+    border: 1px solid var(--border-color); 
+    border-radius: var(--border-radius);
+    font-size: 14px;
+    margin-bottom: 20px;
+  } 
