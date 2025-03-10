@@ -135,6 +135,14 @@
   }
   
  /* settings.html */ 
+    .settings-body {
+    width: 280px;
+    height: 400px;
+    padding: 16px;
+    margin: 0;
+    background-color: #fff;
+    color: var(--text-color);
+  }
   .redirect-url-block h3{
     margin: 0;
     color: var(--primary-color); 
@@ -152,6 +160,7 @@
   textarea{
     width: 95%;
     max-width: 95%;
+    min-height: 80px;
     min-width:95%;
     padding: 10px;
     border: 1px solid var(--border-color); 
