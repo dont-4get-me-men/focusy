@@ -18,7 +18,7 @@ function defineActionByMode(mode,redirectURL=null){
     return {type: mode}
 }
 
-export default async function createRules(mode){
+export default async function createRules(mode,urlPatterns){
     if (mode === 'redirect') { 
         const DEFAULT_URL = chrome.storage.sync.get("redirectURL");
     }

@@ -10,9 +10,8 @@ const saveButton = document.getElementById('settings-save-button');
 
 saveButton.addEventListener('click', function() {
     const whiteListLinks = getTextAreaData('whitelist-input');
-    console.log(whiteListLinks);
     const {links: rightWhiteLinks,wrongLinks: wrongWhiteLinks} = processUrlsString(whiteListLinks);
-    chrome.storage.sync.set({'whitelist': rightWhiteLinks}, function() {
+    chrome.storage.sync.set({'whitelist-urls': rightWhiteLinks}, function() {
         console.log('Whitelist is set to ' + rightWhiteLinks);
     });
 
@@ -23,7 +22,5 @@ saveButton.addEventListener('click', function() {
         console.log('Blacklist is set to ' + rightBlackLinks);
     });
 
-    console.log('Wrong whitelist links: ', wrongWhiteLinks);
-    console.log('Wrong blacklist links: ', wrongBlackLinks);
 });
 
