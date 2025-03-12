@@ -22,5 +22,9 @@ saveButton.addEventListener('click', function() {
         console.log('Blacklist is set to ' + rightBlackLinks);
     });
 
+    const isCheckboxChecked = document.getElementById('enable-redirection').checked;
+    chrome.storage.sync.set({'enable-redirection': isCheckboxChecked}, function() {
+        console.log('Checkbox state is set to ' + isCheckboxChecked);
+    });
 });
 

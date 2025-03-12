@@ -29,7 +29,9 @@ buttons.forEach(async(obj) => {
         if (obj['button'] === 'default'){
             return;
         }
+        let mode = obj['mode'];
+        if (await chrome.storage.sync.get('enable-redirection')) {mode = 'redirect'}
         const urlPatterns = await getRulesFromStorage(obj['storage']);
-        await createRules(obj['mode'],urlPatterns);
+        await createRules(mode, urlPatterns);
     });
 });

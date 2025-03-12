@@ -1,17 +1,9 @@
-function formRedirectRule(basicUrl){
-        return {
-            type: "redirect"
-            , redirect :{
-                "url": basicUrl
-            }
-        }
-}
-function defineActionByMode(mode,redirectURL=null){
+async function defineActionByMode(mode){
     if (mode ==='redirect'){
         return {
             type: "redirect",
             redirect :{
-               "url": redirectURL
+               "url": await chrome.storage.sync.get('redirect-url') || 'https://www.google.com' 
                 }    
             }
         }
@@ -19,15 +11,13 @@ function defineActionByMode(mode,redirectURL=null){
 }
 
 export default async function createRules(mode,urlPatterns){
-    if (mode === 'redirect') { 
-        const DEFAULT_URL = chrome.storage.sync.get("redirectURL");
-    }
+   
     let rules = [];
     for(let index = 0; index <= urlPatterns.length; index++){
         rules.push({
             id: index+1,
             priority: 1,
-            action: defineActionByMode(mode,DEFAULT_URL),
+            action: defineActionByMode(mode),
             condition: { urlFilter: "||"+urlPatterns[index],resourceTypes: ["main_frame"] }
         })
     }
